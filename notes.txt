@@ -1,0 +1,30 @@
+run these cmnds
+-npm init -y (to initialize package.json file)
+-npm i -D typscript(to install ts)
+-npx tsc --init(to initialize ts)
+-npx tsc(to compile code)
+*in this tsconfig file 
+uncmnt
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+change script
+ "scripts": {
+  "start":"npx dist/index.js",
+  "build":"tsc"
+  },
+
+*Type Annotation
+Type annotation is when you explicitly specify the type.
+EXAMPLE
+let age: number = 17;
+let name: string = "Ronny";
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+*Type inference
+Type inference is when TypeScript automatically guesses the type based on the value.
+let city = "Karachi"; // inferred as string
+let score = 95;      // inferred as number
