@@ -225,4 +225,31 @@ function checkRole(person: Admin | User) {
 
 ---
 
-**These notes are suitable for revision, interviews, and real-world TypeScript projects.**
+## Type Predicate
+
+A type predicate is a special return type in TypeScript that tells the compiler how to narrow a variable’s type when a function returns true.
+
+## unknown in TypeScript
+
+`unknown` is a safe alternative to `any`.
+
+> “I don’t know the type yet, and I must check it first before using it.”
+
+### Example
+
+```ts
+let value: unknown;
+
+value = 10;
+value = "chai";
+value = true;
+// All assignments are allowed — just like any.
+// But usage is restricted 👇
+value.toUpperCase(); // ❌ Error
+// TypeScript stops you because it does not know the type.
+
+// You must narrow it first:
+if (typeof value === "string") {
+  value.toUpperCase(); // ✅ Safe
+}
+```
